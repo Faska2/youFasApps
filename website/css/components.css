@@ -804,6 +804,99 @@ html[dir="rtl"] .search-input {
   display: inline-block;
 }
 
+/* Covered / Classified Mystery Box Identity */
+.box-icon-wrap {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.box-product-icon-covered {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.covered-lock-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 1.5px solid #38bdf8;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+html[dir="rtl"] .covered-lock-badge {
+  right: auto;
+  left: -4px;
+}
+
+.box-titles-covered {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.covered-censor-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.08);
+  border: 1px dashed rgba(100, 116, 139, 0.4);
+  padding: 1px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.censor-pulse-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  box-shadow: 0 0 5px rgba(239, 68, 68, 0.8);
+  animation: badgePulse 1.8s infinite ease-in-out;
+}
+
+.censor-pill-text {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.covered-name-bar {
+  background: #0f172a;
+  color: #38bdf8;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  width: fit-content;
+  line-height: 1.2;
+}
+
+.covered-name-bar .censor-block {
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.covered-sub-bar {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  margin-top: 2px;
+}
+
 /* Mini module badges row */
 .box-modules-row {
   display: flex;

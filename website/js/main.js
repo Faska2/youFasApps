@@ -62,7 +62,9 @@ const MainController = (function() {
       const boxCfg = app.boxConfig || {};
       const boxYear = boxCfg.year || "2026";
       const editionText = (boxCfg.edition && (boxCfg.edition[lang] || boxCfg.edition.en)) || "Professional Plus";
-      const spineName = boxCfg.spineName || app.shortName || "APP";
+      const spineName = app.isClassified
+        ? (lang === "ar" ? "سري للغاية" : (lang === "fr" ? "CONFIDENTIEL" : "CLASSIFIED"))
+        : (boxCfg.spineName || app.shortName || "APP");
       const arabicSub = boxCfg.arabicSub || (lang === "ar" ? app.officialName : "");
       
       const modules = boxCfg.modules || [
@@ -161,11 +163,34 @@ const MainController = (function() {
                   </div>
                 </div>
 
-                <div class="box-front-identity">
-                  <img src="${app.branding.appIcon}" alt="${app.officialName} Icon" class="box-product-icon" onerror="this.src='${app.branding.primaryLogo}'">
-                  <div class="box-product-titles">
-                    <h3 class="box-product-name">${app.shortName}</h3>
-                    ${arabicSub ? `<span class="box-product-sub">${arabicSub}</span>` : ""}
+                <div class="box-front-identity ${app.isClassified ? 'is-classified-identity' : ''}">
+                  <div class="box-icon-wrap ${app.isClassified ? 'is-classified-icon-wrap' : ''}">
+                    <img src="${app.branding.appIcon}" alt="${app.officialName} Icon" class="box-product-icon ${app.isClassified ? 'box-product-icon-covered' : ''}" onerror="this.src='${app.branding.primaryLogo}'">
+                    ${app.isClassified ? `
+                      <span class="covered-lock-badge" title="${lang === 'ar' ? 'أيقونة محجوبة' : 'Covered Icon'}">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                      </span>
+                    ` : ''}
+                  </div>
+                  <div class="box-product-titles ${app.isClassified ? 'box-titles-covered' : ''}">
+                    ${app.isClassified ? `
+                      <div class="covered-censor-pill">
+                        <span class="censor-pulse-dot"></span>
+                        <span class="censor-pill-text">${lang === 'ar' ? 'اسم محجوب' : (lang === 'fr' ? 'NOM MASQUÉ' : 'REDACTED')}</span>
+                      </div>
+                      <div class="covered-name-bar" aria-label="Covered Title">
+                        <span class="censor-block">████████</span>
+                      </div>
+                      <span class="box-product-sub covered-sub-bar">
+                        ${lang === 'ar' ? 'سري • قريباً' : (lang === 'fr' ? 'Confidentiel • Bientôt' : 'Classified • Soon')}
+                      </span>
+                    ` : `
+                      <h3 class="box-product-name">${app.shortName}</h3>
+                      ${arabicSub ? `<span class="box-product-sub">${arabicSub}</span>` : ""}
+                    `}
                   </div>
                 </div>
 

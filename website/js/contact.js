@@ -67,6 +67,14 @@ const ContactModal = (function() {
   }
 
   function getPrefilledMessage(appName, lang) {
+    if (activeApp && activeApp.isClassified) {
+      const classifiedMessages = {
+        ar: `مرحباً، أود الاستفسار عن التطبيقات والمشاريع الجديدة قيد التطوير لدى youFasApps لمعرفة موعد إطلاقها وتفاصيلها.`,
+        fr: `Bonjour, je souhaite me renseigner sur les nouvelles applications en cours de développement chez youFasApps pour connaître leur date de disponibilité.`,
+        en: `Hello, I would like to inquire about the upcoming desktop applications currently in development at youFasApps.`
+      };
+      return classifiedMessages[lang] || classifiedMessages.en;
+    }
     if (activeApp && activeApp.isUpcoming) {
       const upcomingMessages = {
         ar: `مرحباً، أود الاستفسار عن تطبيق ${appName} الذي هو قيد التطوير حالياً لمعرفة موعد توفره ومميزاته.`,
@@ -84,7 +92,9 @@ const ContactModal = (function() {
     if (!activeApp) return;
 
     const lang = I18n.getLanguage();
-    const appName = activeApp.officialName;
+    const appName = activeApp.isClassified
+      ? (lang === "ar" ? "مشروع سري قيد الكتمان" : (lang === "fr" ? "Projet Confidentiel" : "Classified Project"))
+      : activeApp.officialName;
     const prefilledText = getPrefilledMessage(appName, lang);
 
     // App card

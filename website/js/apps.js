@@ -972,56 +972,57 @@ const APPS_DATA = [
     ]
   },
   {
-    id: "makhzon",
-    slug: "makhzon",
-    officialName: "مخزون (MAKHZON)",
-    shortName: "MAKHZON",
-    version: "0.9.0",
+    id: "project-01",
+    slug: "project-01",
+    officialName: "مشروع سري #01",
+    shortName: "PROJECT // 01",
+    version: "?.?.?",
     releaseStatus: "In Development",
     isUpcoming: true,
+    isClassified: true,
     category: {
-      en: "Inventory & Asset Management",
-      fr: "Gestion de Stock & Matériel",
-      ar: "إدارة المخزون والممتلكات"
+      en: "Confidential Project",
+      fr: "Projet Confidentiel",
+      ar: "مشروع قيد الكتمان"
     },
     categoryKey: "upcoming",
     tagline: {
-      en: "Next-Generation Offline Inventory & Equipment Management Platform",
-      fr: "Logiciel moderne de gestion des stocks, immobilisations et matériel",
-      ar: "برنامج مكتبي لإدارة المخازن والممتلكات وجرد العتاد وتتبع حركات الاستهلاك"
+      en: "Classified Desktop Project — In Development",
+      fr: "Projet logiciel confidentiel — En développement",
+      ar: "مشروع برمجي سري — قيد التطوير والكتمان"
     },
     shortDescription: {
-      en: "A robust desktop solution currently in engineering, designed to automate warehouse inventory, barcode logging, equipment allocation, and consumption tracking without internet dependency.",
-      fr: "Solution de bureau en cours de développement pour automatiser l'inventaire des stocks, le suivi par code-barres et les mouvements de matériel 100% hors-ligne.",
-      ar: "برنامج مكتبي قيد التطوير حالياً، مصمم لأتمتة جرد المخازن، التتبع بالباركود، إدارة العتاد والممتلكات، ومراقبة حركات الاستهلاك محلياً دون إنترنت."
+      en: "A confidential desktop software project currently in engineering. Details, features, and specifications will be unveiled soon.",
+      fr: "Projet logiciel confidentiel en cours de développement. Les détails, fonctionnalités et spécifications seront dévoilés prochainement.",
+      ar: "مشروع برمجي جديد قيد التطوير والاختبار حالياً. تفاصيل التطبيق ومميزاته سرية ومحمية، وسيتم الكشف عنها رسمياً قريباً."
     },
     branding: {
-      appIcon: "assets/brand/makhzon_icon.svg",
-      primaryLogo: "assets/brand/makhzon_icon.svg",
-      subpageAppIcon: "../assets/brand/makhzon_icon.svg",
-      subpagePrimaryLogo: "../assets/brand/makhzon_icon.svg"
+      appIcon: "assets/brand/mystery_app_icon.svg",
+      primaryLogo: "assets/brand/mystery_app_icon.svg",
+      subpageAppIcon: "../assets/brand/mystery_app_icon.svg",
+      subpagePrimaryLogo: "../assets/brand/mystery_app_icon.svg"
     },
     colors: {
-      primary: "#D97706",
-      secondary: "#F59E0B",
-      accent: "#B45309",
-      darkSurface: "#1e160a"
+      primary: "#2563EB",
+      secondary: "#3B82F6",
+      accent: "#1D4ED8",
+      darkSurface: "#0a101d"
     },
     boxConfig: {
       year: "2026",
       edition: {
-        en: "In Development",
-        fr: "En développement",
-        ar: "قيد التطوير"
+        en: "Classified",
+        fr: "Confidentiel",
+        ar: "سري • قريباً"
       },
-      spineName: "MAKHZON",
-      arabicSub: "إدارة المخزون",
+      spineName: "CONFIDENTIAL",
+      arabicSub: "سري • قريباً",
       modules: [
-        { label: "STK", title: "Stock", color: "#d97706" },
-        { label: "BAR", title: "Barcode", color: "#b45309" },
-        { label: "INV", title: "Inventory", color: "#f59e0b" },
-        { label: "OUT", title: "Dispatch", color: "#ea580c" },
-        { label: "LOG", title: "History", color: "#78350f" }
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" }
       ]
     },
     requirements: {
@@ -1030,56 +1031,57 @@ const APPS_DATA = [
     }
   },
   {
-    id: "kawader",
-    slug: "kawader",
-    officialName: "كوادر (KAWADER)",
-    shortName: "KAWADER",
-    version: "0.8.5",
+    id: "project-02",
+    slug: "project-02",
+    officialName: "مشروع سري #02",
+    shortName: "PROJECT // 02",
+    version: "?.?.?",
     releaseStatus: "In Development",
     isUpcoming: true,
+    isClassified: true,
     category: {
-      en: "Human Resources & Tasks",
-      fr: "Ressources Humaines & Tâches",
-      ar: "الموارد البشرية والمهام"
+      en: "Confidential Project",
+      fr: "Projet Confidentiel",
+      ar: "مشروع قيد الكتمان"
     },
     categoryKey: "upcoming",
     tagline: {
-      en: "Streamlined Desktop HR, Leave Tracking & Duty Management System",
-      fr: "Gestion autonome du personnel, des congés et du suivi des missions",
-      ar: "برنامج مكتبي لإدارة ملفات الموظفين وتتبع الرخص والغيابات وجداول المهام"
+      en: "Classified Desktop Project — In Development",
+      fr: "Projet logiciel confidentiel — En développement",
+      ar: "مشروع برمجي سري — قيد التطوير والكتمان"
     },
     shortDescription: {
-      en: "A confidential on-premise human resources management platform currently being crafted for team profiling, statutory leave accounting, duty schedules, and staff analytics.",
-      fr: "Plateforme RH autonome en cours de conception pour le suivi des dossiers du personnel, les congés réglementaires et les plannings de service.",
-      ar: "برنامج مكتبي متقدم قيد الإنجاز، مخصص لتدبير ملفات المستخدمين، تتبع الإجازات والرخص، جدولة المهام الإدارية، وإعداد تقارير الحضور محلياً."
+      en: "A confidential desktop software project currently in engineering. Details, features, and specifications will be unveiled soon.",
+      fr: "Projet logiciel confidentiel en cours de développement. Les détails, fonctionnalités et spécifications seront dévoilés prochainement.",
+      ar: "مشروع برمجي جديد قيد التطوير والاختبار حالياً. تفاصيل التطبيق ومميزاته سرية ومحمية، وسيتم الكشف عنها رسمياً قريباً."
     },
     branding: {
-      appIcon: "assets/brand/kawader_icon.svg",
-      primaryLogo: "assets/brand/kawader_icon.svg",
-      subpageAppIcon: "../assets/brand/kawader_icon.svg",
-      subpagePrimaryLogo: "../assets/brand/kawader_icon.svg"
+      appIcon: "assets/brand/mystery_app_icon.svg",
+      primaryLogo: "assets/brand/mystery_app_icon.svg",
+      subpageAppIcon: "../assets/brand/mystery_app_icon.svg",
+      subpagePrimaryLogo: "../assets/brand/mystery_app_icon.svg"
     },
     colors: {
       primary: "#7C3AED",
       secondary: "#8B5CF6",
       accent: "#6D28D9",
-      darkSurface: "#170f24"
+      darkSurface: "#120a1d"
     },
     boxConfig: {
       year: "2026",
       edition: {
-        en: "In Development",
-        fr: "En développement",
-        ar: "قيد التطوير"
+        en: "Classified",
+        fr: "Confidentiel",
+        ar: "سري • قريباً"
       },
-      spineName: "KAWADER",
-      arabicSub: "الموارد البشرية",
+      spineName: "CONFIDENTIAL",
+      arabicSub: "سري • قريباً",
       modules: [
-        { label: "HR", title: "Personnel", color: "#7c3aed" },
-        { label: "ATT", title: "Leaves", color: "#8b5cf6" },
-        { label: "TSK", title: "Tasks", color: "#6366f1" },
-        { label: "DOC", title: "Files", color: "#a855f7" },
-        { label: "EVA", title: "Reports", color: "#4f46e5" }
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" }
       ]
     },
     requirements: {
@@ -1088,56 +1090,57 @@ const APPS_DATA = [
     }
   },
   {
-    id: "mustanad",
-    slug: "mustanad",
-    officialName: "مستند (MUSTANAD)",
-    shortName: "MUSTANAD",
-    version: "0.8.0",
+    id: "project-03",
+    slug: "project-03",
+    officialName: "مشروع سري #03",
+    shortName: "PROJECT // 03",
+    version: "?.?.?",
     releaseStatus: "In Development",
     isUpcoming: true,
+    isClassified: true,
     category: {
-      en: "Digital Archive & Records",
-      fr: "Archivage Numérique & GED",
-      ar: "الأرشيف الرقمي والوثائق"
+      en: "Confidential Project",
+      fr: "Projet Confidentiel",
+      ar: "مشروع قيد الكتمان"
     },
     categoryKey: "upcoming",
     tagline: {
-      en: "Secure Local Electronic Document Management & Rapid Optical Indexing",
-      fr: "Coffre-fort documentaire local pour l'indexation rapide et l'archivage numérique",
-      ar: "خزينة رقمية مكتبية للأرشفة الذكية وفهرسة الوثائق الممسوحة ضوئياً والبحث السريع"
+      en: "Classified Desktop Project — In Development",
+      fr: "Projet logiciel confidentiel — En développement",
+      ar: "مشروع برمجي سري — قيد التطوير والكتمان"
     },
     shortDescription: {
-      en: "A standalone document vault and electronic archive system currently being built, featuring high-speed optical scan ingestion, custom classification trees, and encrypted local indexing.",
-      fr: "Système de coffre-fort documentaire en cours de développement, intégrant la numérisation rapide, le classement thématique et l'indexation chiffrée.",
-      ar: "خزينة رقمية مستقلة لحفظ الوثائق قيد التطوير، تتيح أرشفة المستندات الممسوحة ضوئياً، الفهرسة الموضوعية، والبحث الفوري داخل النصوص مع تشفير محلي كامل."
+      en: "A confidential desktop software project currently in engineering. Details, features, and specifications will be unveiled soon.",
+      fr: "Projet logiciel confidentiel en cours de développement. Les détails, fonctionnalités et spécifications seront dévoilés prochainement.",
+      ar: "مشروع برمجي جديد قيد التطوير والاختبار حالياً. تفاصيل التطبيق ومميزاته سرية ومحمية، وسيتم الكشف عنها رسمياً قريباً."
     },
     branding: {
-      appIcon: "assets/brand/mustanad_icon.svg",
-      primaryLogo: "assets/brand/mustanad_icon.svg",
-      subpageAppIcon: "../assets/brand/mustanad_icon.svg",
-      subpagePrimaryLogo: "../assets/brand/mustanad_icon.svg"
+      appIcon: "assets/brand/mystery_app_icon.svg",
+      primaryLogo: "assets/brand/mystery_app_icon.svg",
+      subpageAppIcon: "../assets/brand/mystery_app_icon.svg",
+      subpagePrimaryLogo: "../assets/brand/mystery_app_icon.svg"
     },
     colors: {
       primary: "#059669",
       secondary: "#10B981",
       accent: "#047857",
-      darkSurface: "#091c14"
+      darkSurface: "#061510"
     },
     boxConfig: {
       year: "2026",
       edition: {
-        en: "In Development",
-        fr: "En développement",
-        ar: "قيد التطوير"
+        en: "Classified",
+        fr: "Confidentiel",
+        ar: "سري • قريباً"
       },
-      spineName: "MUSTANAD",
-      arabicSub: "الأرشيف الرقمي",
+      spineName: "CONFIDENTIAL",
+      arabicSub: "سري • قريباً",
       modules: [
-        { label: "SCN", title: "Scan", color: "#059669" },
-        { label: "OCR", title: "Indexing", color: "#10b981" },
-        { label: "TAG", title: "Classification", color: "#14b8a6" },
-        { label: "SEC", title: "Encrypted", color: "#047857" },
-        { label: "ZIP", title: "Backup", color: "#065f46" }
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" },
+        { label: "?", title: "Classified", color: "#334155" }
       ]
     },
     requirements: {
