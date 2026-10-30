@@ -513,7 +513,7 @@ html[dir="rtl"] .search-input {
 
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 2rem;
 }
 
@@ -523,7 +523,7 @@ html[dir="rtl"] .search-input {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
-  padding: 1.75rem 1.5rem 1.5rem;
+  padding: 1.5rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -532,6 +532,7 @@ html[dir="rtl"] .search-input {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transform-style: preserve-3d;
+  box-sizing: border-box;
 }
 
 .app-card:hover {
@@ -823,8 +824,8 @@ html[dir="rtl"] .search-input {
   height: 18px;
   border-radius: 50%;
   background: #0f172a;
-  border: 1.5px solid #38bdf8;
-  color: #38bdf8;
+  border: 1.5px solid var(--app-primary, #38bdf8);
+  color: var(--app-primary, #38bdf8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -872,7 +873,7 @@ html[dir="rtl"] .covered-lock-badge {
 
 .covered-name-bar {
   background: #0f172a;
-  color: #38bdf8;
+  color: var(--app-primary, #38bdf8);
   border-radius: 4px;
   padding: 2px 7px;
   font-family: var(--font-mono, monospace);
@@ -1047,16 +1048,45 @@ html[dir="rtl"] .covered-lock-badge {
 /* CARD ACTION BUTTONS */
 .app-card-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
   width: 100%;
-  margin-top: 1rem;
+  max-width: 100%;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  box-sizing: border-box;
 }
 
 .app-card-footer .btn {
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.65rem 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
   border-radius: var(--radius-md);
+  min-height: 40px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.app-card-footer .btn span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.app-card-footer .btn svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
 }
 
 @media (max-width: 480px) {
