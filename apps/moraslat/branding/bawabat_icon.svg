@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B2D5B"/><stop offset="1" stop-color="#2563EB"/></linearGradient>
+    <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2EC4B6"/><stop offset="1" stop-color="#00AFC8"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#FFFFFF"/>
+  <g transform="translate(58,70) scale(1.05)">
+    <rect x="140" y="18" width="230" height="300" rx="34" fill="url(#gTeal)" transform="rotate(4 255 168)" opacity="0.95"/>
+    <rect x="105" y="4" width="230" height="310" rx="34" fill="#1686D9" transform="rotate(-3 220 160)"/>
+    <path d="M70 76 Q70 40 106 40 H286 Q322 40 322 76 V326 H255 V112 H137 V326 H70 Z" fill="url(#gBlue)"/>
+    <path d="M70 115 L166 72 L166 326 L70 281 Z" fill="#0B2D5B"/>
+    <circle cx="148" cy="198" r="8" fill="#FFFFFF"/>
+    <path d="M186 104 H271 Q286 104 286 119 V298 H186 Z" fill="#FFFFFF"/>
+    <path d="M250 104 L286 140 H250 Z" fill="#EAF7FB"/>
+    <rect x="206" y="168" width="58" height="11" rx="5.5" fill="url(#gTeal)"/>
+    <rect x="206" y="195" width="58" height="11" rx="5.5" fill="#1686D9"/>
+    <rect x="206" y="222" width="45" height="11" rx="5.5" fill="#1686D9"/>
+  </g>
+</svg>

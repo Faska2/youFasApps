@@ -1,0 +1,118 @@
+/**
+ * youFasApps - Design System Tokens & Theming Variables
+ * Supports intentional Dark and Light themes with WCAG AA compliance.
+ */
+
+:root {
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-arabic: 'Noto Sans Arabic', 'Cairo', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace;
+
+  /* Global Brand Identity Colors */
+  --brand-navy: #081225;
+  --brand-navy-light: #0d1b33;
+  --brand-blue: #0284c7;
+  --brand-cyan: #00c8ff;
+  --brand-teal: #19A7A0;
+  --brand-accent: #38bdf8;
+  --brand-emerald: #10b981;
+  --brand-whatsapp: #25D366;
+  --brand-whatsapp-hover: #1EBE5D;
+
+  /* Sizing & Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 72px;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Dark Theme (Default)
+   ========================================================================== */
+:root[data-theme="dark"] {
+  --bg-primary: #060b17;
+  --bg-secondary: #0b1426;
+  --bg-surface: #0f1d38;
+  --bg-card: rgba(15, 29, 56, 0.7);
+  --bg-card-hover: rgba(21, 38, 72, 0.85);
+  --bg-elevated: #152648;
+  --bg-glass: rgba(11, 20, 38, 0.75);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-inverted: #060b17;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-normal: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.24);
+  --border-accent: rgba(56, 189, 248, 0.35);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border-subtle);
+  --shadow-card-hover: 0 20px 40px -12px rgba(0, 200, 255, 0.15), 0 0 0 1px var(--border-accent);
+
+  --halo-glow: rgba(0, 200, 255, 0.12);
+  --badge-bg: rgba(56, 189, 248, 0.12);
+  --badge-text: #38bdf8;
+  --badge-border: rgba(56, 189, 248, 0.25);
+
+  --logo-filter: none;
+}
+
+/* ==========================================================================
+   Light Theme
+   ========================================================================== */
+:root[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+  --text-inverted: #ffffff;
+
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-normal: rgba(15, 23, 42, 0.14);
+  --border-strong: rgba(15, 23, 42, 0.22);
+  --border-accent: rgba(2, 132, 199, 0.35);
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.1);
+  --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 0 0 1px var(--border-subtle);
+  --shadow-card-hover: 0 20px 40px -12px rgba(2, 132, 199, 0.15), 0 0 0 1px var(--border-accent);
+
+  --halo-glow: rgba(2, 132, 199, 0.1);
+  --badge-bg: rgba(2, 132, 199, 0.08);
+  --badge-text: #0284c7;
+  --badge-border: rgba(2, 132, 199, 0.2);
+
+  --logo-filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+/* Prevent transitions when switching themes on load */
+.no-transitions * {
+  transition: none !important;
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mustanadBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="mustanadSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded Base Tile -->
+  <rect x="14" y="14" width="172" height="172" rx="42" fill="url(#mustanadBg)"/>
+  <rect x="14" y="14" width="172" height="172" rx="42" fill="none" stroke="url(#mustanadSheen)" stroke-width="2.5"/>
+  <!-- Stylized Secure Document Vault / Archive Folder -->
+  <path d="M 52 64 C 52 58 56 54 62 54 H 88 L 102 68 H 138 C 144 68 148 72 148 78 V 140 C 148 146 144 150 138 150 H 62 C 56 150 52 146 52 140 Z" fill="#FFFFFF" fill-opacity="0.95"/>
+  <!-- Inner Document Sheet with Folded Corner -->
+  <rect x="68" y="80" width="64" height="48" rx="6" fill="#047857" fill-opacity="0.15"/>
+  <line x1="78" y1="94" x2="114" y2="94" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
+  <line x1="78" y1="106" x2="122" y2="106" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
+  <line x1="78" y1="118" x2="104" y2="118" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
+  <!-- Security Shield / Vault Lock at bottom right -->
+  <circle cx="132" cy="132" r="14" fill="#10B981"/>
+  <path d="M 128 132 L 131 135 L 137 129" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

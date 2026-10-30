@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="kawaderBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <linearGradient id="kawaderSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded Base Tile -->
+  <rect x="14" y="14" width="172" height="172" rx="42" fill="url(#kawaderBg)"/>
+  <rect x="14" y="14" width="172" height="172" rx="42" fill="none" stroke="url(#kawaderSheen)" stroke-width="2.5"/>
+  <!-- Stylized People / Leadership Hierarchy Symbol -->
+  <!-- Center Main Head -->
+  <circle cx="100" cy="74" r="22" fill="#FFFFFF"/>
+  <!-- Center Body -->
+  <path d="M 66 142 C 66 114 80 108 100 108 C 120 108 134 114 134 142 Z" fill="#FFFFFF"/>
+  <!-- Left Teammate Head & Body -->
+  <circle cx="62" cy="84" r="14" fill="#FFFFFF" fill-opacity="0.65"/>
+  <path d="M 40 136 C 40 118 50 114 64 114 C 69 114 74 115 78 118 C 73 125 71 133 71 140 H 40 Z" fill="#FFFFFF" fill-opacity="0.65"/>
+  <!-- Right Teammate Head & Body -->
+  <circle cx="138" cy="84" r="14" fill="#FFFFFF" fill-opacity="0.65"/>
+  <path d="M 160 136 C 160 118 150 114 136 114 C 131 114 126 115 122 118 C 127 125 129 133 129 140 H 160 Z" fill="#FFFFFF" fill-opacity="0.65"/>
+</svg>

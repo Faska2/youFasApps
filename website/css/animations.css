@@ -1,0 +1,365 @@
+/**
+ * youFasApps - Animations & Motion System
+ * Includes the Signature 3-Second Logo Formation Animation Sequence,
+ * restrained micro-interactions, and full prefers-reduced-motion accessibility overrides.
+ */
+
+/* ==========================================================================
+   Brand Formation Loading Overlay (3000ms Sequence)
+   ========================================================================== */
+.brand-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.brand-loader-overlay.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.brand-formation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+  padding: 1.5rem;
+}
+
+/* Vector Symbol Assembly Frame */
+.formation-symbol-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1.75rem;
+}
+
+.formation-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Phase 1 (0–600ms): Base Squircle Foundation */
+.anim-squircle-bg {
+  transform-origin: center;
+  opacity: 0;
+  transform: scale(0.65);
+}
+
+.is-animating .anim-squircle-bg {
+  animation: squircleFoundation 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+}
+
+@keyframes squircleFoundation {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+    filter: drop-shadow(0 0 0 rgba(0, 180, 255, 0));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 12px 35px rgba(0, 110, 255, 0.45));
+  }
+}
+
+/* Phase 2 (600–1600ms): Staggered Geometric Assembly of Cells */
+.anim-cell {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Top-Left: White cell (600ms - 1100ms) */
+.is-animating .cell-tl {
+  animation: cellAssembleTL 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) 0.6s forwards;
+}
+
+@keyframes cellAssembleTL {
+  0% {
+    opacity: 0;
+    transform: translate(-14px, -14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Top-Right: Cyan cell (750ms - 1250ms) */
+.is-animating .cell-tr {
+  animation: cellAssembleTR 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) 0.75s forwards;
+}
+
+@keyframes cellAssembleTR {
+  0% {
+    opacity: 0;
+    transform: translate(14px, -14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Bottom-Left: Cyan cell (900ms - 1400ms) */
+.is-animating .cell-bl {
+  animation: cellAssembleBL 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) 0.9s forwards;
+}
+
+@keyframes cellAssembleBL {
+  0% {
+    opacity: 0;
+    transform: translate(-14px, 14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Phase 3 (1200–1900ms): Stylized White 'F' Detail */
+.is-animating .cell-f {
+  animation: cellAssembleF 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+}
+
+@keyframes cellAssembleF {
+  0% {
+    opacity: 0;
+    transform: translate(14px, 14px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Phase 4 (1500–2400ms): Wordmark Reveal */
+.formation-wordmark {
+  font-family: var(--font-sans);
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.anim-youfas {
+  color: #FFFFFF;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+:root[data-theme="light"] .anim-youfas {
+  color: #07142F;
+}
+
+.is-animating .anim-youfas {
+  animation: wordmarkReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+}
+
+.anim-apps {
+  background: linear-gradient(115deg, #00E5FF 0%, #0075FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.is-animating .anim-apps {
+  animation: wordmarkReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.8s forwards;
+}
+
+@keyframes wordmarkReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Phase 5 (2200–2700ms): Tagline Reveal */
+.formation-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.is-animating .formation-tagline {
+  animation: taglineReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
+}
+
+@keyframes taglineReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Phase 6 (2700–3000ms): Settle and Fade Out into Hero */
+.is-animating {
+  animation: overlayFadeOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) 2.8s forwards;
+}
+
+@keyframes overlayFadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Skip Button */
+.anim-skip-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all var(--transition-fast);
+}
+
+html[dir="rtl"] .anim-skip-btn {
+  right: auto;
+  left: 2rem;
+}
+
+.anim-skip-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-normal);
+  background-color: var(--bg-elevated);
+}
+
+/* ==========================================================================
+   Continuous Subtle Ambient Animations
+   ========================================================================== */
+@keyframes subtleFloat {
+  0% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* ==========================================================================
+   Scroll Reveals
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ==========================================================================
+   3D Tilt & Perspective Utilities
+   ========================================================================== */
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Accessibility: Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .brand-loader-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-logo-frame {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  [data-tilt] {
+    transform: none !important;
+  }
+}

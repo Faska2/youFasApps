@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAWABAT (بوابة المراسلات) — Administrative Correspondence & Bureau d'Ordre Platform | youFasApps</title>
+  <meta name="description" content="Official showcase for BAWABAT (بوابة المراسلات), the secure institutional desktop platform for administrative mail, courier routing, citizen correspondence, and Bureau d'Ordre governance.">
+  <meta name="author" content="youFasApps">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="BAWABAT (بوابة المراسلات) — Administrative Correspondence Platform">
+  <meta property="og:description" content="Institutional desktop platform for administrative mail, courier routing, citizen correspondence, and Bureau d'Ordre governance. Compliant with Moroccan Laws 55-19 and 31-13.">
+  <meta property="og:image" content="../assets/brand/youfasapps-logo.svg">
+
+  <!-- Scalable Vector Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Anti-FOUC Theme & Language Initializer -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem("youfas_theme");
+        const theme = savedTheme || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.colorScheme = theme;
+
+        const savedLang = localStorage.getItem("youfas_language");
+        if (savedLang) {
+          document.documentElement.setAttribute("lang", savedLang);
+          document.documentElement.setAttribute("dir", savedLang === "ar" ? "rtl" : "ltr");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/details.css">
+</head>
+<body data-app-slug="bawabat">
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-nav" role="banner">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand" aria-label="youFasApps Home">
+        <svg class="nav-brand-icon" viewBox="0 0 200 200" width="36" height="36" aria-hidden="true">
+          <defs>
+            <linearGradient id="bwNavSymBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00B4FF"/>
+              <stop offset="50%" stop-color="#006EFF"/>
+              <stop offset="100%" stop-color="#0046E0"/>
+            </linearGradient>
+            <linearGradient id="bwNavSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+              <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <rect x="12" y="12" width="176" height="176" rx="46" fill="url(#bwNavSymBg)"/>
+          <rect x="12" y="12" width="176" height="176" rx="46" fill="none" stroke="url(#bwNavSheen)" stroke-width="2.5"/>
+          <rect x="42" y="42" width="52" height="52" rx="14" fill="#FFFFFF"/>
+          <rect x="106" y="42" width="52" height="52" rx="14" fill="#00E5FF"/>
+          <rect x="42" y="106" width="52" height="52" rx="14" fill="#00E5FF"/>
+          <path d="M 115 106 H 152 A 6 6 0 0 1 158 112 V 118 A 6 6 0 0 1 152 124 H 126 V 131 H 145 A 6 6 0 0 1 151 137 V 141 A 6 6 0 0 1 145 147 H 126 V 151 A 7 7 0 0 1 119 158 H 114 A 7 7 0 0 1 107 151 V 114 A 8 8 0 0 1 115 106 Z" fill="#FFFFFF"/>
+        </svg>
+        <span class="nav-brand-text">
+          <span class="brand-text-neutral">youFas</span><span class="brand-text-accent">Apps</span>
+        </span>
+      </a>
+
+      <div class="nav-menu-wrapper">
+        <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+          <a href="../index.html#hero" class="nav-link" data-i18n="navHome">Home</a>
+          <a href="../index.html#showcase" class="nav-link active" data-i18n="navApps">Applications</a>
+          <a href="../index.html#about" class="nav-link" data-i18n="navAbout">About</a>
+          <a href="../index.html#contact" class="nav-link" data-i18n="navContact">Contact</a>
+        </nav>
+
+        <div class="nav-controls">
+          <!-- Light / Dark Theme Toggle -->
+          <button type="button" class="theme-toggle-btn" data-theme-toggle data-i18n-aria="themeToggleAria" aria-label="Toggle light or dark theme">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="12" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Language Selector Pills -->
+          <div class="lang-switcher" role="group" data-i18n-aria="langSelectAria" aria-label="Select website language">
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+            <button type="button" class="lang-btn" data-lang-btn="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang-btn="ar">العربية</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" class="mobile-menu-btn" data-i18n-aria="mobileMenuAria" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Breadcrumbs
+         ========================================================================== -->
+    <div class="breadcrumbs-bar">
+      <div class="container">
+        <ul class="breadcrumbs-list" role="navigation" aria-label="Breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html" data-i18n="breadcrumbHome">Home</a></li>
+          <li class="breadcrumb-sep">/</li>
+          <li class="breadcrumb-item"><a href="../index.html#showcase" data-i18n="breadcrumbApps">Applications</a></li>
+          <li class="breadcrumb-sep">/</li>
+          <li class="breadcrumb-item is-current" aria-current="page" data-app-name>بوابة المراسلات (BAWABAT)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         Product Hero Header
+         ========================================================================== -->
+    <section class="product-hero">
+      <div class="container product-hero-grid">
+        <div class="product-hero-info reveal">
+          <div class="product-badges-row">
+            <span class="app-badge category-badge" data-app-category>Administrative & Public Sector Solutions</span>
+            <span class="app-badge version-badge">v1.0.0</span>
+            <span class="app-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="detailsReleaseLabel">Production Ready</span>
+          </div>
+
+          <h1 class="product-hero-title" data-app-name>بوابة المراسلات (BAWABAT)</h1>
+          <p class="product-hero-tagline" data-app-tagline>Secure Administrative Correspondence, Bureau d'Ordre, and Courier Governance Platform</p>
+
+          <div class="product-specs-chips">
+            <div class="spec-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Windows 10 / 11 (64-bit)</span>
+            </div>
+
+            <div class="spec-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span data-i18n="detailsOfflineLabel">100% Offline Core</span>
+            </div>
+
+            <div class="spec-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span>العربية (RTL) & Français (LTR) & English</span>
+            </div>
+          </div>
+
+          <div class="product-hero-cta">
+            <button type="button" class="btn btn-primary" data-get-app="bawabat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span data-i18n="btnGetApp">Get the App</span>
+            </button>
+
+            <a href="#overview" class="btn btn-secondary">
+              <span data-i18n="navTabOverview">Overview</span>
+              <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3D Logo Presentation -->
+        <div class="product-hero-visual reveal reveal-delay-2">
+          <div class="product-visual-card" data-tilt data-tilt-max="8" data-tilt-scale="1.02" style="--app-primary: #0F52BA;">
+            <div class="product-halo"></div>
+            <img src="../../apps/moraslat/branding/bawabat_icon.svg" alt="BAWABAT Official Icon" class="product-big-icon" id="detailAppIcon">
+            <h3 class="product-identity-name">BAWABAT</h3>
+            <span class="product-identity-alt">بوابة المراسلات • Laws 55-19 & 31-13</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Sticky Details Sub-Navigation Tabs
+         ========================================================================== -->
+    <nav class="details-subnav-sticky" aria-label="Product Sections Navigation">
+      <div class="container">
+        <div class="details-subnav-list">
+          <a href="#overview" class="details-subnav-link is-active" data-i18n="navTabOverview">Overview</a>
+          <a href="#benefits" class="details-subnav-link" data-i18n="navTabBenefits">Key Benefits</a>
+          <a href="#features" class="details-subnav-link" data-i18n="navTabFeatures">Verified Features</a>
+          <a href="#requirements" class="details-subnav-link" data-i18n="navTabRequirements">System Requirements</a>
+          <a href="#audience" class="details-subnav-link" data-i18n="navTabAudience">Target Audience</a>
+          <a href="#faq" class="details-subnav-link" data-i18n="navTabFaq">FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==========================================================================
+         Section 1: Overview
+         ========================================================================== -->
+    <section id="overview" class="product-content-block">
+      <div class="container">
+        <div class="section-badge" data-i18n="navTabOverview">Overview</div>
+        <h2 class="section-title" data-i18n="sectionOverviewTitle">Institutional Overview</h2>
+        
+        <div class="desc-prose" id="detailFullDesc">
+          <!-- Populated by details.js based on selected language -->
+        </div>
+
+        <div class="statutory-callout">
+          <svg class="callout-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div>
+            <h4 class="callout-title">Statutory Compliance Mandate</h4>
+            <p id="detailStatutoryText">Compliant with Moroccan Law 55-19 on administrative simplification and Law 31-13 on the right of access to information. Ensures strict traceability, automated response time tracking, and institutional accountability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 2: Key Benefits
+         ========================================================================== -->
+    <section id="benefits" class="product-content-block" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-badge" data-i18n="navTabBenefits">Key Benefits</div>
+        <h2 class="section-title" data-i18n="sectionBenefitsTitle">Core Institutional Benefits</h2>
+        
+        <div class="benefits-grid" id="detailBenefitsList">
+          <!-- Populated by details.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 3: Verified Features
+         ========================================================================== -->
+    <section id="features" class="product-content-block">
+      <div class="container">
+        <div class="section-badge" data-i18n="navTabFeatures">Verified Features</div>
+        <h2 class="section-title" data-i18n="sectionFeaturesTitle">Verified Feature Modules</h2>
+        
+        <div class="features-grid" id="detailFeaturesList">
+          <!-- 11 feature modules populated dynamically by details.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 4: Requirements
+         ========================================================================== -->
+    <section id="requirements" class="product-content-block" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-badge" data-i18n="navTabRequirements">System Requirements</div>
+        <h2 class="section-title" data-i18n="sectionRequirementsTitle">Hardware & Platform Requirements</h2>
+
+        <div class="specs-table-wrapper">
+          <div class="specs-grid">
+            <div class="spec-cell">
+              <span class="spec-cell-label" data-i18n="detailsPlatformLabel">Operating System</span>
+              <span class="spec-cell-value" id="specOs">Windows 10, Windows 11 (64-bit / x64)</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label">Offline Architecture</span>
+              <span class="spec-cell-value" id="specOffline">100% Offline Core (No mandatory cloud)</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label">Processor</span>
+              <span class="spec-cell-value" id="specCpu">64-bit Intel or AMD processor</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label">Memory (RAM)</span>
+              <span class="spec-cell-value" id="specRam">4 GB Minimum (8 GB Recommended)</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label">Storage</span>
+              <span class="spec-cell-value" id="specDisk">~350 MB available local disk space</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label" data-i18n="detailsLanguagesLabel">Supported Languages</span>
+              <span class="spec-cell-value" id="specLang">Arabic (العربية - RTL), French & English</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label">Local Network Access</span>
+              <span class="spec-cell-value">Built-in Local Area Network (LAN/Wi-Fi) sharing</span>
+            </div>
+
+            <div class="spec-cell">
+              <span class="spec-cell-label">Licensing Security</span>
+              <span class="spec-cell-value">Hardware-bound machine token activation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 5: Target Audience
+         ========================================================================== -->
+    <section id="audience" class="product-content-block">
+      <div class="container">
+        <div class="section-badge" data-i18n="navTabAudience">Target Audience</div>
+        <h2 class="section-title" data-i18n="sectionAudienceTitle">Designed for Institutional Roles</h2>
+
+        <div class="audience-grid" id="detailAudienceList">
+          <!-- Populated dynamically by details.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 6: FAQ
+         ========================================================================== -->
+    <section id="faq" class="product-content-block" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-badge" data-i18n="navTabFaq">FAQ</div>
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2.5rem;" data-i18n="sectionFaqTitle">Frequently Asked Questions</h2>
+
+        <div class="faq-accordion" id="detailFaqContainer">
+          <!-- Populated dynamically by details.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Bottom CTA Banner
+         ========================================================================== -->
+    <div class="container" style="padding-bottom: 5rem;">
+      <div class="details-cta-banner reveal">
+        <h3 class="details-cta-title" id="detailCtaTitle">Interested in Implementing BAWABAT?</h3>
+        <p class="details-cta-subtitle" data-i18n="ctaBannerSubtitle">Contact our team directly on WhatsApp to discuss deployment, licensing, and customized institutional demonstrations.</p>
+        <button type="button" class="btn btn-whatsapp" data-get-app="bawabat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.073-.49-1.637-.676-2.684-2.338-2.766-2.449-.082-.111-.664-.883-.664-1.684 0-.801.42-1.196.57-1.357.148-.161.325-.202.434-.202.109 0 .217.001.312.006.1.005.234-.038.366.279.135.324.462 1.127.502 1.209.041.082.068.178.014.286-.055.109-.082.177-.163.272-.082.096-.172.214-.246.288-.082.082-.167.171-.072.335.096.163.424.7.912 1.135.628.56 1.157.733 1.32.815.163.082.259.072.355-.038.096-.111.408-.475.517-.638.109-.163.218-.137.367-.082.15.054.953.45 1.117.532.163.082.272.122.312.191.041.069.041.405-.103.81z"/>
+          </svg>
+          <span data-i18n="ctaBannerButton">Request via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="../index.html#hero" class="footer-brand" aria-label="youFasApps Home">
+            <svg class="footer-brand-icon" viewBox="0 0 200 200" width="32" height="32" aria-hidden="true">
+              <defs>
+                <linearGradient id="bwFtSymBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00B4FF"/>
+                  <stop offset="50%" stop-color="#006EFF"/>
+                  <stop offset="100%" stop-color="#0046E0"/>
+                </linearGradient>
+                <linearGradient id="bwFtSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+                  <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+                  <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.25"/>
+                </linearGradient>
+              </defs>
+              <rect x="12" y="12" width="176" height="176" rx="46" fill="url(#bwFtSymBg)"/>
+              <rect x="12" y="12" width="176" height="176" rx="46" fill="none" stroke="url(#bwFtSheen)" stroke-width="2.5"/>
+              <rect x="42" y="42" width="52" height="52" rx="14" fill="#FFFFFF"/>
+              <rect x="106" y="42" width="52" height="52" rx="14" fill="#00E5FF"/>
+              <rect x="42" y="106" width="52" height="52" rx="14" fill="#00E5FF"/>
+              <path d="M 115 106 H 152 A 6 6 0 0 1 158 112 V 118 A 6 6 0 0 1 152 124 H 126 V 131 H 145 A 6 6 0 0 1 151 137 V 141 A 6 6 0 0 1 145 147 H 126 V 151 A 7 7 0 0 1 119 158 H 114 A 7 7 0 0 1 107 151 V 114 A 8 8 0 0 1 115 106 Z" fill="#FFFFFF"/>
+            </svg>
+            <span><span class="brand-text-neutral">youFas</span><span class="brand-text-accent">Apps</span></span>
+          </a>
+          <p class="footer-desc" data-i18n="footerDesc">Premium desktop software solutions engineered for institutional governance, administrative precision, and local data sovereignty.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" data-i18n="footerQuickLinks">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html#hero" class="footer-link" data-i18n="navHome">Home</a></li>
+            <li><a href="../index.html#showcase" class="footer-link" data-i18n="navApps">Applications</a></li>
+            <li><a href="../index.html#about" class="footer-link" data-i18n="navAbout">About</a></li>
+            <li><a href="../index.html#contact" class="footer-link" data-i18n="navContact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" data-i18n="footerProducts">Products</h4>
+          <ul class="footer-links">
+            <li><a href="cm-manager.html" class="footer-link">IJTIMAA (اجتماع)</a></li>
+            <li><a href="bawabat.html" class="footer-link">BAWABAT (بوابة المراسلات)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <span>&copy; <span id="copyrightYear">2026</span> youFasApps. </span>
+          <span data-i18n="footerRights">All rights reserved.</span>
+        </div>
+        <div class="footer-static-disclaimer" data-i18n="footerStaticNotice">
+          Static showcase website. No direct downloads, payments, or activation tracking.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/apps.js"></script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/contact.js"></script>
+  <script src="../js/motion.js"></script>
+  <script src="../js/details.js"></script>
+</body>
+</html>

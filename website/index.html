@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>youFasApps — Premium Desktop Software Showcase</title>
+  <meta name="description" content="Discover premium desktop applications crafted by youFasApps. Robust, offline-ready software engineered for institutional governance, administrative precision, and uncompromising reliability.">
+  <meta name="author" content="youFasApps">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="youFasApps — Software That Works for You">
+  <meta property="og:description" content="Discover thoughtfully designed desktop applications that simplify complex workflows and ensure statutory compliance.">
+  <meta property="og:image" content="assets/brand/youfasapps-logo.svg">
+  <meta property="og:site_name" content="youFasApps">
+
+  <!-- Scalable Vector Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <!-- Typography: Inter & Noto Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Anti-FOUC Inline Theme & Language Initializer -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem("youfas_theme");
+        const theme = savedTheme || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.colorScheme = theme;
+
+        const savedLang = localStorage.getItem("youfas_language");
+        if (savedLang) {
+          document.documentElement.setAttribute("lang", savedLang);
+          document.documentElement.setAttribute("dir", savedLang === "ar" ? "rtl" : "ltr");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Signature 3-Second Logo Formation Overlay (Brand Sequence)
+       ========================================================================== -->
+  <div id="brandLoader" class="brand-loader-overlay" role="region" aria-label="Brand Introduction Animation">
+    <div class="brand-formation-container">
+      <div class="formation-symbol-wrap">
+        <svg class="formation-svg" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <linearGradient id="animBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00B4FF"/>
+              <stop offset="50%" stop-color="#006EFF"/>
+              <stop offset="100%" stop-color="#0046E0"/>
+            </linearGradient>
+            <linearGradient id="animSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+              <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <!-- Phase 1: Base Squircle Foundation (0–600ms) -->
+          <rect class="anim-squircle-bg" x="12" y="12" width="176" height="176" rx="46" fill="url(#animBgGrad)"/>
+          <rect class="anim-squircle-bg" x="12" y="12" width="176" height="176" rx="46" fill="none" stroke="url(#animSheen)" stroke-width="2.5"/>
+          <!-- Phase 2: Geometric Assembly of 4 Cells (600–1600ms) -->
+          <rect class="anim-cell cell-tl" x="42" y="42" width="52" height="52" rx="14" fill="#FFFFFF"/>
+          <rect class="anim-cell cell-tr" x="106" y="42" width="52" height="52" rx="14" fill="#00E5FF"/>
+          <rect class="anim-cell cell-bl" x="42" y="106" width="52" height="52" rx="14" fill="#00E5FF"/>
+          <!-- Phase 3: Stylized 'F' Detail (1150–1900ms) -->
+          <path class="anim-cell cell-f" d="M 115 106 H 152 A 6 6 0 0 1 158 112 V 118 A 6 6 0 0 1 152 124 H 126 V 131 H 145 A 6 6 0 0 1 151 137 V 141 A 6 6 0 0 1 145 147 H 126 V 151 A 7 7 0 0 1 119 158 H 114 A 7 7 0 0 1 107 151 V 114 A 8 8 0 0 1 115 106 Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+
+      <!-- Phase 4: Wordmark Reveal (1500–2400ms) -->
+      <div class="formation-wordmark">
+        <span class="anim-youfas">youFas</span><span class="anim-apps">Apps</span>
+      </div>
+
+      <!-- Phase 5: Tagline (2200–2700ms) -->
+      <div class="formation-tagline">
+        Discover. Explore. Download.
+      </div>
+    </div>
+
+    <!-- Quick Skip Button for Visitors -->
+    <button type="button" class="anim-skip-btn" aria-label="Skip intro animation">Skip</button>
+  </div>
+
+  <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-nav" role="banner">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="youFasApps Home">
+        <!-- Recreated Vector App Symbol -->
+        <svg class="nav-brand-icon" viewBox="0 0 200 200" width="36" height="36" aria-hidden="true">
+          <defs>
+            <linearGradient id="navSymBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00B4FF"/>
+              <stop offset="50%" stop-color="#006EFF"/>
+              <stop offset="100%" stop-color="#0046E0"/>
+            </linearGradient>
+            <linearGradient id="navSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+              <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <rect x="12" y="12" width="176" height="176" rx="46" fill="url(#navSymBg)"/>
+          <rect x="12" y="12" width="176" height="176" rx="46" fill="none" stroke="url(#navSheen)" stroke-width="2.5"/>
+          <rect x="42" y="42" width="52" height="52" rx="14" fill="#FFFFFF"/>
+          <rect x="106" y="42" width="52" height="52" rx="14" fill="#00E5FF"/>
+          <rect x="42" y="106" width="52" height="52" rx="14" fill="#00E5FF"/>
+          <path d="M 115 106 H 152 A 6 6 0 0 1 158 112 V 118 A 6 6 0 0 1 152 124 H 126 V 131 H 145 A 6 6 0 0 1 151 137 V 141 A 6 6 0 0 1 145 147 H 126 V 151 A 7 7 0 0 1 119 158 H 114 A 7 7 0 0 1 107 151 V 114 A 8 8 0 0 1 115 106 Z" fill="#FFFFFF"/>
+        </svg>
+        <span class="nav-brand-text">
+          <span class="brand-text-neutral">youFas</span><span class="brand-text-accent">Apps</span>
+        </span>
+      </a>
+
+      <div class="nav-menu-wrapper">
+        <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+          <a href="#hero" class="nav-link active" data-i18n="navHome">Home</a>
+          <a href="#showcase" class="nav-link" data-i18n="navApps">Applications</a>
+          <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
+          <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
+        </nav>
+
+        <div class="nav-controls">
+          <!-- Light / Dark Theme Toggle -->
+          <button type="button" class="theme-toggle-btn" data-theme-toggle data-i18n-aria="themeToggleAria" aria-label="Toggle light or dark theme">
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg class="icon-moon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Language Selector Pills -->
+          <div class="lang-switcher" role="group" data-i18n-aria="langSelectAria" aria-label="Select website language">
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+            <button type="button" class="lang-btn" data-lang-btn="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang-btn="ar">العربية</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" class="mobile-menu-btn" data-i18n-aria="mobileMenuAria" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="section-badge" data-i18n="heroBadge">Desktop Software Engineering</div>
+          <h1 class="hero-headline" data-i18n="heroHeadline">Discover Software That Moves You Forward.</h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">Explore thoughtfully designed desktop applications built to simplify work, guarantee statutory compliance, and improve everyday productivity.</p>
+          
+          <div class="hero-cta-group">
+            <a href="#showcase" class="btn btn-primary">
+              <span data-i18n="heroExploreCta">Explore Applications</span>
+              <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary" data-i18n="heroContactCta">Contact Us</a>
+          </div>
+
+          <div class="hero-trust-row">
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span data-i18n="heroTrustOffline">100% Local & Sovereign</span>
+            </div>
+
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span data-i18n="heroTrustNative">Native Windows Performance</span>
+            </div>
+
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span data-i18n="heroTrustDirect">Direct WhatsApp Inquiries</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Brand Logo Showcase (Recreated Pure SVG Vector Lockup) -->
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-logo-frame" data-tilt data-tilt-max="10" data-tilt-scale="1.03">
+            <div class="hero-logo-halo"></div>
+            <img src="assets/brand/youfasapps-logo.svg" alt="youFasApps Official Vector Brand Lockup" class="hero-logo-img">
+            <div class="hero-logo-caption">Desktop Software Studio</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Applications Showcase Section
+         ========================================================================== -->
+    <section id="showcase" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge" data-i18n="showcaseBadge">Software Portfolio</div>
+          <h2 class="section-title" data-i18n="showcaseTitle">Engineered Desktop Applications</h2>
+          <p class="section-subtitle" data-i18n="showcaseSubtitle">Explore our verified software suite built for institutional rigor and everyday operational clarity.</p>
+        </div>
+
+        <!-- Toolbar: Search & Category Filter -->
+        <div class="showcase-toolbar reveal reveal-delay-1">
+          <div class="search-bar-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="appSearchInput" class="search-input" data-i18n-placeholder="searchPlaceholder" placeholder="Search applications by keyword or domain...">
+          </div>
+
+          <div class="category-filter-row">
+            <button type="button" class="filter-btn active" data-filter="all" data-i18n="filterAll">All Applications</button>
+            <button type="button" class="filter-btn" data-filter="govtech" data-i18n="filterGovtech">Meeting Management</button>
+            <button type="button" class="filter-btn" data-filter="admin" data-i18n="filterAdmin">Correspondence & Registry</button>
+            <button type="button" class="filter-btn" data-filter="upcoming" data-i18n="filterUpcoming">In Development</button>
+          </div>
+        </div>
+
+        <!-- Grid of Discovered Applications (Populated by main.js) -->
+        <div class="apps-grid" id="appsGrid">
+          <!-- Injected via JavaScript from APPS_DATA -->
+        </div>
+
+        <!-- Empty search state -->
+        <div id="appsEmptyState" class="empty-state" style="display: none;">
+          <svg class="empty-state-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <h3 class="empty-state-title" data-i18n="noResultsTitle">No applications found</h3>
+          <p data-i18n="noResultsDesc">Try adjusting your search terms or filter selection.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         About Section
+         ========================================================================== -->
+    <section id="about" class="section" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge" data-i18n="aboutBadge">Our Philosophy</div>
+          <h2 class="section-title" data-i18n="aboutTitle">Crafting Reliable Software for Demanding Workflows</h2>
+          <p class="section-subtitle" data-i18n="aboutText">youFasApps focuses on engineering focused, offline-capable desktop solutions. We craft institutional-grade tools that respect user sovereignty, ensure data privacy, and deliver uncompromising reliability.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <div class="about-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="about-card-title" data-i18n="aboutCard1Title">Local-First Sovereignty</h3>
+            <p data-i18n="aboutCard1Desc">We engineer desktop tools that operate 100% offline. Sensitive municipal records and files never leave your local machines without your explicit command.</p>
+          </div>
+
+          <div class="about-card reveal reveal-delay-1">
+            <div class="about-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 class="about-card-title" data-i18n="aboutCard2Title">Regulatory Precision</h3>
+            <p data-i18n="aboutCard2Desc">Our applications are structured directly around governing laws and administrative statutory rules, turning strict procedural mandates into frictionless workflows.</p>
+          </div>
+
+          <div class="about-card reveal reveal-delay-2">
+            <div class="about-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <h3 class="about-card-title" data-i18n="aboutCard3Title">Direct Human Consultation</h3>
+            <p data-i18n="aboutCard3Desc">We eliminate automated bots and complicated ticketing portals. Engage directly with our development leadership via WhatsApp for licensing and demonstrations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Contact Section
+         ========================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge" data-i18n="contactBadge">Contact & Acquisition</div>
+          <h2 class="section-title" data-i18n="contactTitle">Ready to Transform Your Workflow?</h2>
+          <p class="section-subtitle" data-i18n="contactSubtitle">We distribute our applications through direct consultation. Reach out on WhatsApp to request an application, discuss licensing, or schedule a personalized institutional demonstration.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-channels-grid">
+            <!-- WhatsApp Channel 1 -->
+            <div class="contact-card reveal">
+              <div class="contact-badge-header">
+                <span class="contact-num-pill" data-i18n="contactChannel1Num">WhatsApp 1</span>
+                <span class="badge" style="color: var(--brand-teal);" data-i18n="contactChannel1Badge">General & Sales</span>
+              </div>
+              <h3 class="contact-card-title" data-i18n="contactChannel1Title">Commercial & Licensing</h3>
+              <p class="contact-card-desc" data-i18n="contactChannel1Desc">Inquire about workstation deployment, institutional licensing models, and acquisition agreements.</p>
+              <span class="contact-card-phone" dir="ltr">+212 600-000000</span>
+              <span class="dev-placeholder-pill" title="Configured in js/config.js" data-i18n="contactDevPlaceholder">Development Placeholder</span>
+              <button type="button" class="btn btn-whatsapp" data-get-app="cm-manager">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.073-.49-1.637-.676-2.684-2.338-2.766-2.449-.082-.111-.664-.883-.664-1.684 0-.801.42-1.196.57-1.357.148-.161.325-.202.434-.202.109 0 .217.001.312.006.1.005.234-.038.366.279.135.324.462 1.127.502 1.209.041.082.068.178.014.286-.055.109-.082.177-.163.272-.082.096-.172.214-.246.288-.082.082-.167.171-.072.335.096.163.424.7.912 1.135.628.56 1.157.733 1.32.815.163.082.259.072.355-.038.096-.111.408-.475.517-.638.109-.163.218-.137.367-.082.15.054.953.45 1.117.532.163.082.272.122.312.191.041.069.041.405-.103.81z"/>
+                </svg>
+                <span data-i18n="contactOpenWa">Message on WhatsApp</span>
+              </button>
+            </div>
+
+            <!-- WhatsApp Channel 2 -->
+            <div class="contact-card reveal reveal-delay-1">
+              <div class="contact-badge-header">
+                <span class="contact-num-pill" data-i18n="contactChannel2Num">WhatsApp 2</span>
+                <span class="badge" style="color: var(--brand-blue);" data-i18n="contactChannel2Badge">Demonstrations</span>
+              </div>
+              <h3 class="contact-card-title" data-i18n="contactChannel2Title">Institutional Demos & Tech</h3>
+              <p class="contact-card-desc" data-i18n="contactChannel2Desc">Request an interactive walk-through session for your council, administrative committee, or technical department.</p>
+              <span class="contact-card-phone" dir="ltr">+212 700-000000</span>
+              <span class="dev-placeholder-pill" title="Configured in js/config.js" data-i18n="contactDevPlaceholder">Development Placeholder</span>
+              <button type="button" class="btn btn-whatsapp" data-get-app="cm-manager">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.073-.49-1.637-.676-2.684-2.338-2.766-2.449-.082-.111-.664-.883-.664-1.684 0-.801.42-1.196.57-1.357.148-.161.325-.202.434-.202.109 0 .217.001.312.006.1.005.234-.038.366.279.135.324.462 1.127.502 1.209.041.082.068.178.014.286-.055.109-.082.177-.163.272-.082.096-.172.214-.246.288-.082.082-.167.171-.072.335.096.163.424.7.912 1.135.628.56 1.157.733 1.32.815.163.082.259.072.355-.038.096-.111.408-.475.517-.638.109-.163.218-.137.367-.082.15.054.953.45 1.117.532.163.082.272.122.312.191.041.069.041.405-.103.81z"/>
+                </svg>
+                <span data-i18n="contactOpenWa">Message on WhatsApp</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="contact-meta-notice" data-i18n="contactAvailabilityNote">Available for municipal councils, public institutions, and professional organizations.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-brand" aria-label="youFasApps Home">
+            <svg class="footer-brand-icon" viewBox="0 0 200 200" width="32" height="32" aria-hidden="true">
+              <defs>
+                <linearGradient id="ftSymBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00B4FF"/>
+                  <stop offset="50%" stop-color="#006EFF"/>
+                  <stop offset="100%" stop-color="#0046E0"/>
+                </linearGradient>
+                <linearGradient id="ftSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+                  <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+                  <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.25"/>
+                </linearGradient>
+              </defs>
+              <rect x="12" y="12" width="176" height="176" rx="46" fill="url(#ftSymBg)"/>
+              <rect x="12" y="12" width="176" height="176" rx="46" fill="none" stroke="url(#ftSheen)" stroke-width="2.5"/>
+              <rect x="42" y="42" width="52" height="52" rx="14" fill="#FFFFFF"/>
+              <rect x="106" y="42" width="52" height="52" rx="14" fill="#00E5FF"/>
+              <rect x="42" y="106" width="52" height="52" rx="14" fill="#00E5FF"/>
+              <path d="M 115 106 H 152 A 6 6 0 0 1 158 112 V 118 A 6 6 0 0 1 152 124 H 126 V 131 H 145 A 6 6 0 0 1 151 137 V 141 A 6 6 0 0 1 145 147 H 126 V 151 A 7 7 0 0 1 119 158 H 114 A 7 7 0 0 1 107 151 V 114 A 8 8 0 0 1 115 106 Z" fill="#FFFFFF"/>
+            </svg>
+            <span><span class="brand-text-neutral">youFas</span><span class="brand-text-accent">Apps</span></span>
+          </a>
+          <p class="footer-desc" data-i18n="footerDesc">Premium desktop software solutions engineered for institutional governance, administrative precision, and local data sovereignty.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" data-i18n="footerQuickLinks">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link" data-i18n="navHome">Home</a></li>
+            <li><a href="#showcase" class="footer-link" data-i18n="navApps">Applications</a></li>
+            <li><a href="#about" class="footer-link" data-i18n="navAbout">About</a></li>
+            <li><a href="#contact" class="footer-link" data-i18n="navContact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" data-i18n="footerProducts">Products</h4>
+          <ul class="footer-links">
+            <li><a href="apps/cm-manager.html" class="footer-link">IJTIMAA (اجتماع)</a></li>
+            <li><a href="apps/bawabat.html" class="footer-link">BAWABAT (بوابة المراسلات)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <span>&copy; <span id="copyrightYear">2026</span> youFasApps. </span>
+          <span data-i18n="footerRights">All rights reserved.</span>
+        </div>
+        <div class="footer-static-disclaimer" data-i18n="footerStaticNotice">
+          Static showcase website. No direct downloads, payments, or activation tracking.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/apps.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/brand-animation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

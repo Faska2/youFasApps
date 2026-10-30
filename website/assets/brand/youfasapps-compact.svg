@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100" width="460" height="100">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4FF"/>
+      <stop offset="50%" stop-color="#006EFF"/>
+      <stop offset="100%" stop-color="#0046E0"/>
+    </linearGradient>
+    <linearGradient id="compSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#00A3FF" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="compAppsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0088FF"/>
+    </linearGradient>
+    <style>
+      .wordmark-neutral { fill: #FFFFFF; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; }
+      .wordmark-accent { fill: url(#compAppsGrad); font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; }
+      @media (prefers-color-scheme: light) {
+        .wordmark-neutral { fill: #07142F; }
+      }
+    </style>
+  </defs>
+
+  <!-- Symbol Group -->
+  <g transform="translate(6, 6) scale(0.44)">
+    <rect x="12" y="12" width="176" height="176" rx="46" fill="url(#compBg)"/>
+    <rect x="12" y="12" width="176" height="176" rx="46" fill="none" stroke="url(#compSheen)" stroke-width="2.5"/>
+    <rect x="42" y="42" width="52" height="52" rx="14" fill="#FFFFFF"/>
+    <rect x="106" y="42" width="52" height="52" rx="14" fill="#00E5FF"/>
+    <rect x="42" y="106" width="52" height="52" rx="14" fill="#00E5FF"/>
+    <path d="M 115 106 H 152 A 6 6 0 0 1 158 112 V 118 A 6 6 0 0 1 152 124 H 126 V 131 H 145 A 6 6 0 0 1 151 137 V 141 A 6 6 0 0 1 145 147 H 126 V 151 A 7 7 0 0 1 119 158 H 114 A 7 7 0 0 1 107 151 V 114 A 8 8 0 0 1 115 106 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Wordmark Text -->
+  <text x="110" y="66" font-size="52" letter-spacing="-1.5">
+    <tspan class="wordmark-neutral">youFas</tspan><tspan class="wordmark-accent">Apps</tspan>
+  </text>
+</svg>
